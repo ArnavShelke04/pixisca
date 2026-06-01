@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import PixelArt from "./components/PixelArt";
 
 function App() {
-  return <></>;
+  return (
+    <div>
+      <PixelArt />
+    </div>
+  );
 }
 
 export default App;
