@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function PixelArt() {
-  const [gridSize, setGridSize] = useState(16);
+  const gridSize = 256;
   const [grid, setGrid] = useState(() =>
     Array(gridSize * gridSize).fill("#fff"),
   );
@@ -14,7 +14,7 @@ function PixelArt() {
 
   return (
     <div
-      className="grid w-[30rem] h-[30rem]"
+      className="grid w-[100rem] h-[100rem]"
       style={{ gridTemplateColumns: `repeat(${gridSize},1fr)` }}
     >
       {grid.map((color, index) => {
