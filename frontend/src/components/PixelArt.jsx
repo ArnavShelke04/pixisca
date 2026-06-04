@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PixelArt() {
+function PixelArt({ color }) {
   const gridSize = 256;
   const [grid, setGrid] = useState(() =>
     Array(gridSize * gridSize).fill("#fff"),
@@ -8,7 +8,7 @@ function PixelArt() {
 
   const handleCellClick = (index) => {
     const newGrid = [...grid];
-    newGrid[index] = "#000";
+    newGrid[index] = color;
     setGrid(newGrid);
   };
 
