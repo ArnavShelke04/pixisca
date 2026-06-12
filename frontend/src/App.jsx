@@ -18,13 +18,16 @@ function App() {
   return (
     <>
       <div onWheel={handleZoom} className="relative w-screen h-screen overflow-clip">
-        <div style={{transform: `scale(${zoom})`}}>
-          <PixelArt color={color}/>
-        </div>
-        <div className="fixed z-10 top-0 left-0" >
-          <ColorPicker color={color} setColor={setColor}/>
-        </div>
-      </div>
+  
+  <div style={{ transform: `scale(${zoom})`, transformOrigin: 'center' }}>
+    <PixelArt color={color}/>
+  </div>
+  
+
+  <div className="fixed z-10 top-0 left-0 p-4">
+    <ColorPicker color={color} setColor={setColor}/>
+  </div>
+</div>
     </>
   );
 }
