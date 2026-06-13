@@ -25,7 +25,7 @@ function App() {
   
   return (
     <>
-      <div onDrag={handlePan} onWheel={handleZoom} className="relative w-screen h-screen overflow-clip">
+      <div onWheel={handleZoom} className="relative w-screen h-screen overflow-clip">
         <div style={{ transform: `scale(${zoom})`, transformOrigin: 'center' }}>
           <PixelArt color={color} />
         </div>
