@@ -25,6 +25,14 @@ function App() {
     e.preventDefault();
     const zoomDirection = e.deltaY < 0 ? 1 : -1;
 
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    // Mouse position relative to the element
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    setOrigin(`${x}px ${y}px`);
+
     setZoom((prevZoom) => {
       const nextZoom = prevZoom + zoomDirection * ZOOM_SPEED;
       const clampedZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, nextZoom));
@@ -36,7 +44,6 @@ function App() {
   return (
     <>
       <div
-        onMouseMove={handleMouseMove}
         onWheel={handleZoom}
         className="relative w-screen h-screen overflow-clip"
       >
